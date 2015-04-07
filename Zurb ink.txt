@@ -1,0 +1,158 @@
+Notes on ZURB Ink:
+
+	Basics:
+	12 column grid with a 580px
+
+	containers: wrap the content and maintain a fixed 580 layout on large, below 580 takes up 95% width
+
+	rows: used to separate vertically, td tags of .row tables use the wrapper class to maintain gutter between columns
+		note: last .wrapper in a row MUST have a class of .last applied, even if it's the only wrapper in the row 
+
+	columns: 12. 
+
+
+
+How to Use
+
+	Element 	Classes
+	table  		(container || row)
+	td		(wrapper || last || expander)
+	table 		([number] || columns)
+
+
+	To add background:
+		1. Apply inline background color to the body tag AND add a .body to the table after. 
+		2. Add the same CSS properties to the class and element selectors in the <style> section in head tag
+
+	To center:
+		1. apply class of center to the <td> that contains content
+		2. Also apply class of center to the image itself
+		~3. For max client support, also recommend using the <center> tag
+		
+	To create empty space:
+		1. offset columns by using the .offset-by-{number} class
+		2. add padding using the .text-pad class on <td> of a <table> with .columns
+		3. can also use the .left-text-pad or .right-text-pad (will only be applied to both sides if in one column mode)
+
+	To create full-width rows:
+		1. Create standard container > row > column block but swap .row and .container classes. Add center class to td within row 
+		Example:
+			<table class="row"> <!-- Styles go on the row -->
+			  <tr>
+				<td class="center" align="center"> <!-- Center the container -->
+				  <center>
+
+					<table class="container"> <!-- Container restricts the content width -->
+					  <tr>
+						<td class="wrapper last"> <!-- Wrapper stays on the inner table -->
+
+						  <table class="twelve columns">
+							<tr>
+		
+	To nest grids:
+		1. Ink grid can't be nested but you can use .sub-columns within a <tr> of a .columns <tabe>
+		2. last .sub-columns <td> should be given a class of last in order for the gutter padding to be maintained
+	
+	To scale small images that may leave whitespace on mobile:
+		1. add an empty <td> with .expander after the td containing the actual content in the columns table (extra <td> is not displayed)
+
+	To use a block grid (Optimizing for gmail mobile):
+		1. block-grid elements automatically align to the left and are pushed down to the next rown as viewport gets smaller (without media queries)
+		2. consists of a table with class .block-grid applied along with a class {number}-up to describe how many even sized elements should be placed per row.
+		3. don't leave whitespace between closing <td> and opening <td> (some clients will render this as a gap between elements)
+		~4. (As a progressive enhancement, adding a media query that expands the columns to 100% width under 600px would cause the columns to take up the whole screen on mobile clients that support media queries, while not breaking the reflow pattern for those that don't.)
+				@media only screen and (max-width: 600px) {
+				  table[class="container"] .block-grid td {
+					width: 100% !important;
+				  }
+				}
+
+	To hide or display images based on size:
+		1. Use visibility classes
+		2. Due to Outlook's lack of support for certain CSS properties, the Ink visibiility classes should be used in conjunction with conditional comments to ensure that the content is properly hidden (or shown) in Outlook 2007/2010/2013.
+			<!--[if !mso]><!-- -->
+			//Enter non-mso text here
+			<!--<![endif]-->
+			(Available for many platforms (Mozilla, IE8/9, ect.))	  
+			Visibility classes work as expected in most major email clients, but do not currently support Gmail.
+		
+	To use built in panels:
+		1. add class of panel to a <td> in a .columns table
+	
+	Panels With Sub-grids:
+		1. Nesting a sub-grid under a panel is non-intuitive, since the sub-grid columns would normally be applied to the <td> elements directly under the .columns table. To get around this, give the <td> a class of .panel and a class of .sub-grid. You can then put a <table> inside the <td> and create the sub-columns using the <td> elements of the inner table, as shown below.
+				
+	To create button that scales to full-width:
+		1. add a table with a class of .button around the <a> element
+			size classes:	
+				.button (same as .small-button)
+				.tiny-button
+				.small-button
+				.medium-button
+				.large-button
+			color classes:
+				none (same as .primary)
+				.primary
+				.secondary
+				.alert
+				.success
+			border classes:
+				none (no border-radius)
+				.radius
+				.round
+				
+	To use high resolution (retina) images:
+		1. put height and width attr on <img> element (corresponds to the scaled size of the image in a desktop view (on smaller devices, ink will cause the image to expand to its full width (or width of parent element(whichever is smaller))))
+
+
+		
+					<table class="row">
+					  <tr>
+						<td class="wrapper">
+
+						  <table class="three columns">
+							<tr>
+							  <td>
+
+								<img height="130" width="130" src="http://placehold.it/600x600&text=Retina%20Image">
+
+							  </td>
+							  <td class="expander"></td>
+							</tr>
+						  </table>
+
+						</td>
+						<td class="wrapper last">
+
+						  <table class="nine columns">
+							<tr>
+							  <td>
+
+								Text Content
+
+							  </td>
+							  <td class="expander"></td>
+							</tr>
+						  </table>
+
+						</td>
+					  </tr>
+					</table>
+		
+		
+
+		
+reference to column width: 
+Number of Columns 	Internal Width (in px)
+1 					30
+2 					80
+3 					130
+4 					180
+5 					230
+6 					280
+7 					330
+8 					380
+9 					430
+10 					480
+11 					530
+12 					580

@@ -1,0 +1,5 @@
+moving the vacation content and birthday content to 365 from ekaterina
+
+
+//INFO ON WHAT LEVEL OF O365 HAS WHAT SOFTWARE, ect.
+https://technet.microsoft.com/en-us/library/sharepoint-online-service-description.aspx

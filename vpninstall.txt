@@ -1,0 +1,29 @@
+URL for Pulse Install
+ebpsslvpn.verizon.com/helpdesk
+
+On Pulse Install, Choose custom install, 
+drop down Junos Pulse and make sure 'This feature will not be available' is selected and red X is present.
+
+VPN
+Username z689020
+Password 8-digit pin + 6dig token number
+
+When done lodaing. do you want to launch junos (say yes)
+
+after installing pulse
+right click tray icon
+start pulse
+
+add four connections within pulse
+fairland - https://fdcebpsslvpn.verizon.com/pulse
+freehold - https://fhebpsslvpn.verizon.com/pulse
+sacramento - https://sacebpsslvpn.verizon.com/pulse
+tampa - https://tpaebpsslvpn.verizon.com/pulse
+
+add all and try to connect to one (if one works, all should work if url correct)
+
+secureauth.verizon.com in IE
+wait for 6-dig rsa token to refresh to new value (not same as input in pulse app)
+standard sign on - ok
+vzweb.verizon.com
+(Forgot/Reset Your VZ Windows Password  for single signon)

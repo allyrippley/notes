@@ -1,0 +1,64 @@
+marketing promotion 
+sales pitching
+client
+
+
+ideas for sites
+
+tech conventions
+angularwrangler
+
+
+education software
+loyalty software
+
+change loading speed:
+move js to end
+cache variables
+use a fragment with a single DOM call instead of multiple calls to DOM
+
+
+javascript exception handling
+try catch block
+error instance of reference error
+throw reference error in if
+x === undefined
+
+try catch finally
+finally acts regardless of what happened in try catch
+
+
+
+avoid js with
+cache obj
+
+eval legibility
+ability to debug
+performance
+
+
+
+javascript use namespaces
+
+
+ajax
+success 
+errortimeout
+beforeSend
+complete
+
+
+    1.2 Ajax Basics
+    1.3 Ajax
+    1.4 Ajax with Response
+    1.5 $.get Shorthand
+    1.6 Ajax Data
+
+Ajax Options
+
+    1.7 Ajax Options
+    1.8 Ajax with Errors
+    1.9 Setting a Timeout
+    1.10 More Ajax Callbacks
+    1.11 Event Delegation
+

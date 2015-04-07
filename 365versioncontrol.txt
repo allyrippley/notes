@@ -1,0 +1,15 @@
+Turning on versioning control for Office 365's SharePoint Online libraries or lists is as easy as a few mouse clicks. Here’s how you do it:
+
+From your document library, click the Library tab on the Ribbon and go to Library Settings.
+
+Under General Settings, click Versioning Settings.
+
+From the Content Approval group, select either Yes or No to indicate whether or not a document needs to be approved first before it comes visible to the site users.
+
+From the Document Version History group, choose from one of the options for tracking version history.
+
+From the Require Checkout group, select either Yes or No.
+
+Select No if you are going to use the library for coauthoring.
+
+Click OK.
